@@ -24,7 +24,7 @@ tags:
   - name: Analysis
     description: Submit analysis and get data
   - name: Available Objects
-    description: Get informations about available objects you can use to build Analysis
+    description: Get information about available objects you can use to build Analysis
 components:
   securitySchemes:
     oauth_security_scheme:

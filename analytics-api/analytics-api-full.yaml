@@ -16,14 +16,14 @@ tags:
   - name: Analysis
     description: Submit analysis and get data
   - name: Available Objects
-    description: Get informations about available objects you can use to build Analysis
+    description: Get information about available objects you can use to build Analysis
 components:
   securitySchemes:
     oauth_security_scheme:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: /analytics/api/oauth/token
+          tokenUrl: https://intelligence.eu.mapp.com/analytics/api/oauth/token
           scopes:
             mapp.intelligence-api: Use intelligence APIs
   schemas:

@@ -51,6 +51,7 @@
                                                 description: 'QA'
                                             }
                                         ];
+                                        spec.components.securitySchemes.oauth_security_scheme.flows.clientCredentials.tokenUrl = '/analytics/api/oauth/token'
                                         return oriAction(spec);
                                     };
                                 }
