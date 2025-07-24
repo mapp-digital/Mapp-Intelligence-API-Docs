@@ -2215,7 +2215,7 @@ paths:
             '*/*':
               schema:
                 $ref: '#/components/schemas/ReportQueryState'
-  /report-query/{id}:
+  /report-query/{reportCorrelationId}:
     get:
       tags:
         - Analysis
@@ -2223,7 +2223,7 @@ paths:
       description: Get report calculation query state
       operationId: status
       parameters:
-        - name: id
+        - name: reportCorrelationId
           in: path
           required: true
           schema:
@@ -2293,7 +2293,7 @@ paths:
       summary: Cancel report calculation query
       description: Cancel report calculation query
       parameters:
-        - name: id
+        - name: reportCorrelationId
           in: path
           required: true
           schema:
