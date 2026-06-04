@@ -10,7 +10,7 @@ info:
     name: Technical Support Mapp Digital
     url: https://mapp.com/tech-support/
 servers:
-  - url: https://intelligence.eu.mapp.com/analytics/api/
+  - url: https://api.mapp.com/api/analytics
     description: Production
 tags:
   - name: Analysis
@@ -23,9 +23,7 @@ components:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: https://intelligence.eu.mapp.com/analytics/api/oauth/token
-          scopes:
-            mapp.intelligence-api: Use intelligence APIs
+          tokenUrl: https://auth.mapp.com/oauth2/token
   schemas:
     FilterPredicateEnum:
       type: string
