@@ -2260,12 +2260,12 @@ paths:
                       reportTitle: "Advertiser Overview"
                     queryStates:
                       - calculationId: 579d66fe984f72f7154c5f48e0d3d65741dac870eb337a0524d4d3db02f119b7_294915650484552
-                        accountId: 294915650484552
+                        accountId: '294915650484552'
                         correlationId: 1ba0f0c7-b05e-47e6-8d4f-e78787dfe9ab
                         resultUrl: https://intelligence.eu.mapp.com/analytics/api/analysis-query/1ba0f0c7-b05e-47e6-8d4f-e78787dfe9ab
                         status: RUNNING
                         details:
-                          lastUpdatedAt: 2024-09-23T18:01:08.280Z
+                          lastUpdatedAt: 1727114468280
                           reportElementId: 43946
                 Analysis completed:
                   value:
@@ -2277,12 +2277,12 @@ paths:
                       reportTitle: "Advertiser Overview"
                     queryStates:
                       - calculationId: 579d66fe984f72f7154c5f48e0d3d65741dac870eb337a0524d4d3db02f119b7_294915650484552
-                        accountId: 294915650484552
+                        accountId: '294915650484552'
                         correlationId: 1ba0f0c7-b05e-47e6-8d4f-e78787dfe9ab
                         resultUrl: https://intelligence.eu.mapp.com/analytics/api/analysis-result/579d66fe984f72f7154c5f48e0d3d65741dac870eb337a0524d4d3db02f119b7_294915650484552
                         status: SUCCESS
                         details:
-                          lastUpdatedAt: 2024-09-23T18:01:08.280Z
+                          lastUpdatedAt: 1727114468280
                           reportElementId: 43946
     delete:
       tags:
