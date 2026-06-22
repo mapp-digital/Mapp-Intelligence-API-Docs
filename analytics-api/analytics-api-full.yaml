@@ -911,9 +911,8 @@ components:
       type: object
       properties:
         lastUpdatedAt:
-          type: string
-          format: date-time
-          description: Last updated time of report
+          type: number
+          description: Last updated time of report in milliseconds since the UNIX epoch
         reportId:
           type: string
           description: Report Unique Id
@@ -2255,7 +2254,7 @@ paths:
                     reportCorrelationId: 1ea0f0c7-b05e-47e6-8d4f-e78787dfe9ac
                     status: RUNNING
                     details:
-                      lastUpdatedAt: 2024-09-23T18:01:08.280Z
+                      lastUpdatedAt: 1727114468280
                       reportId: 1006
                       reportTitle: "Advertiser Overview"
                     queryStates:
@@ -2272,7 +2271,7 @@ paths:
                     reportCorrelationId: 1ea0f0c7-b05e-47e6-8d4f-e78787dfe9ac
                     status: SUCCESS
                     details:
-                      lastUpdatedAt: 2024-09-23T18:01:08.280Z
+                      lastUpdatedAt: 1727114468280
                       reportId: 1006
                       reportTitle: "Advertiser Overview"
                     queryStates:
