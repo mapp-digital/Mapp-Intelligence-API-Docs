@@ -623,10 +623,10 @@ components:
           type: object
           properties:
             lastUpdatedAt:
-              type: number
+              type: integer
               description: 'Last update time in milliseconds since the UNIX epoch'
             reportElementId:
-              type: number
+              type: integer
               description: 'ID of the report element'
     DataTypeEnum:
       type: string
@@ -911,10 +911,10 @@ components:
       type: object
       properties:
         lastUpdatedAt:
-          type: number
+          type: integer
           description: Last updated time of report in milliseconds since the UNIX epoch
         reportId:
-          type: string
+          type: integer
           description: Report Unique Id
         reportTitle:
           type: string
@@ -1699,7 +1699,7 @@ components:
         timerange:
           - '2021-08-26T00:00:00.000+0200'
           - '2021-09-02T00:00:00.000+0200'
-        timestamp: '2021-09-02T09:15:43.567+0200'
+        timestamp: '2021-09-02T09:15:43.567+02:00'
     reportQueryObject:
       value:
         configuration:
@@ -2375,7 +2375,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SegmentDefinition'
+                type: array
+                items:
+                  $ref: '#/components/schemas/SegmentDefinition'
               examples:
                 Segments:
                   value:
@@ -2413,7 +2415,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DynamicTimeFilterDefinition'
+                type: array
+                items:
+                  $ref: '#/components/schemas/DynamicTimeFilterDefinition'
               examples:
                 DynamicTimeFilters:
                   value:
