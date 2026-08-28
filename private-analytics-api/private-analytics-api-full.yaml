@@ -12,13 +12,7 @@ info:
     name: Technical Support Mapp Digital
     url: https://mapp.com/tech-support/
 servers:
-  - url: https://intelligence-dev-private.nbg.webtrekk.com/analytics/api
-    description: DEV
-  - url: https://intelligence-int-private.nbg.webtrekk.com/analytics/api
-    description: INT
-  - url: https://intelligence-qa-private.nbg.webtrekk.com/analytics/api
-    description: QA
-  - url: https://intelligence.nbg.webtrekk.com/analytics/api
+  - url: https://analytics-gateway.k8s-prod-01.nbg.webtrekk.com/private-analytics-api
     description: PROD
 tags:
   - name: Analysis
@@ -31,9 +25,7 @@ components:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: /analytics/api/oauth/token
-          scopes:
-            mapp.intelligence-api.private: Use intelligence APIs for internal usage
+          tokenUrl: https://auth.shortest-route.com/realms/s2s/protocol/openid-connect/token
   schemas:
     FilterPredicateEnum:
       type: string
@@ -2201,6 +2193,13 @@ paths:
       summary: Create report calculation query
       description: Create multiple calculation queries, also known as a report.
       operationId: createReportQuery
+      parameters:
+        - name: accountId
+          in: query
+          description: Id of the account where the report query must be executed
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:

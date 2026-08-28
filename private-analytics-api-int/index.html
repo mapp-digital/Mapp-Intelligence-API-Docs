@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css"/>
+    <title>Mapp Intelligence Private AnalyticsAPI - INT</title>
+</head>
+<body>
+<div id="swagger-ui"></div>
+<script>
+    window.onload = function () {
+        window.ui = loadIntSwagger();
+    }
+
+    function loadIntSwagger() {
+        const intPlugins = [
+            () => {
+                return {
+                    statePlugins: {
+                        spec: {
+                            wrapActions: {
+                                updateJsonSpec: function (oriAction, system) {
+                                    return (spec) => {
+                                        spec.servers = [
+                                            {
+                                                url: 'https://analytics-gateway.k8s-int-01.nbg.webtrekk.com/private-analytics-api',
+                                                description: 'INT'
+                                            }
+                                        ];
+                                        spec.components.securitySchemes.oauth_security_scheme.flows.clientCredentials.tokenUrl = 'https://idp-int.shortest-route.com/realms/s2s/protocol/openid-connect/token';
+                                        return oriAction(spec);
+                                    };
+                                }
+                            }
+                        }
+                    }
+                };
+            }
+        ];
+        return loadSwagger("../private-analytics-api/private-analytics-api-full.yaml", intPlugins);
+    }
+
+    function loadSwagger(url, additionalPlugins = []) {
+        return SwaggerUIBundle({
+            url: url,
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIBundle.SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl,
+                ...additionalPlugins
+            ],
+        });
+    }
+
+</script>
+</body>
+</html>
